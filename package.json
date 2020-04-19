@@ -1,0 +1,41 @@
+{
+  "name": "team-zone",
+  "version": "1.0.0",
+  "description": "Team Zone application",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "build:server": "webpack --config webpack.server.config.js",
+    "server": "node ./dist/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brummel/team-zone.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/brummel/team-zone/issues"
+  },
+  "homepage": "https://github.com/brummel/team-zone#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.9.9"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.2.2",
+    "@babel/node": "^7.8.7",
+    "@babel/preset-env": "^7.3.1",
+    "@types/jest": "^25.2.1",
+    "babel-loader": "^8.0.5",
+    "eslint": "^6.8.0",
+    "eslint-loader": "^4.0.0",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-react": "^7.19.0",
+    "jest": "^25.3.0",
+    "webpack": "^4.42.1",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.1.14",
+    "webpack-node-externals": "^1.7.2"
+  }
+}
