@@ -5,7 +5,7 @@ process.env.NODE_ENV = "development";
 
 module.exports = {
   mode: "development",
-  entry: "./src/server/server.js",
+  entry: "./src/server/index.js",
   output: {
     path: path.join(__dirname, "dist"),
     publicPath: "/",
