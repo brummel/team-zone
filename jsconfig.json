@@ -1,6 +1,6 @@
 {
   "typeAcquisition": {
-    "include": ["jest"]
+    "include": ["jest", "should"]
   },
   "compilerOptions": {
     "module": "commonjs",

@@ -6,8 +6,9 @@ const create = (prefix) => {
 
   router
     .route(prefix)
-    .get((req, res) => {
-      return res.send("User data");
+    .get(async (req, res) => {
+      const users = await User.find();
+      res.send(users);
     })
     .post(async (req, res) => {
       console.log(req.body);
