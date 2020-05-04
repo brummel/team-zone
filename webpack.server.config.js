@@ -5,12 +5,8 @@ process.env.NODE_ENV = "development";
 
 module.exports = {
   mode: "development",
-  entry: "./src/server/index.js",
-  output: {
-    path: path.join(__dirname, "dist"),
-    publicPath: "/",
-    filename: "server.js",
-  },
+  entry: "./src/server/index.ts",
+  devtool: "inline-source-map",
   target: "node",
   node: {
     __dirname: false,
@@ -20,10 +16,18 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /\.tsx?$/,
+        use: "ts-loader",
         exclude: /node_modules/,
-        use: ["babel-loader"],
       },
     ],
+  },
+  resolve: {
+    extensions: [".tsx", ".ts", ".js"],
+  },
+  output: {
+    path: path.join(__dirname, "dist"),
+    publicPath: "/",
+    filename: "server.js",
   },
 };

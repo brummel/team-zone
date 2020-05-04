@@ -1,5 +1,6 @@
 import supertest from "supertest";
 import * as server from "./server";
+import { IUser } from "./models/users";
 
 const agent = supertest.agent(server.app);
 
@@ -8,7 +9,7 @@ describe("User tests", () => {
     server.start(done);
   });
 
-  const expectUser = (user) => {
+  const expectUser = (user: IUser) => {
     expect(user).not.toBeNull();
     expect(user).toHaveProperty("_id");
     expect(user).toHaveProperty("name");
@@ -34,7 +35,7 @@ describe("User tests", () => {
       .end((err, res) => {
         expect(Array.isArray(res.body)).toBe(true);
         expect(res.body.length).toBeGreaterThan(0);
-        res.body.forEach((user) => expectUser(user));
+        res.body.forEach((user: IUser) => expectUser(user));
         done();
       });
   });

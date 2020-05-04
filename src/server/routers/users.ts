@@ -1,7 +1,7 @@
 import express from "express";
 import User from "../models/users";
 
-const create = (prefix) => {
+const create = (prefix: string) => {
   const router = express.Router();
 
   router
