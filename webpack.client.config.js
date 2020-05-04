@@ -6,8 +6,8 @@ process.env.NODE_ENV = "development";
 module.exports = {
   mode: "development",
   target: "web",
-  devtool: "cheap-module-source-map",
-  entry: "./src/client/index",
+  devtool: "inline-module-source-map",
+  entry: "./src/client/index.tsx",
   output: {
     path: path.resolve(__dirname, "dist"),
     publicPath: "/",
@@ -25,9 +25,9 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(js|jsx)$/,
+        test: /\.tsx?$/,
+        use: "ts-loader",
         exclude: /node_modules/,
-        use: ["babel-loader", "eslint-loader"],
       },
       {
         test: /(\.css)$/,
