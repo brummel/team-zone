@@ -12,6 +12,11 @@ module.exports = {
     __dirname: false,
     __filename: false,
   },
+  output: {
+    path: path.join(__dirname, "dist"),
+    publicPath: "/",
+    filename: "server.js",
+  },
   externals: [nodeExternals()],
   module: {
     rules: [
@@ -24,10 +29,5 @@ module.exports = {
   },
   resolve: {
     extensions: [".tsx", ".ts", ".js"],
-  },
-  output: {
-    path: path.join(__dirname, "dist"),
-    publicPath: "/",
-    filename: "server.js",
   },
 };

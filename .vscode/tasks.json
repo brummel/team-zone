@@ -1,0 +1,29 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "type": "npm",
+      "script": "build:client",
+      "problemMatcher": ["$tsc"],
+      "group": "build",
+      "label": "Build Client",
+      "detail": "webpack --config webpack.client.config.js"
+    },
+    {
+      "type": "npm",
+      "script": "build:server",
+      "group": "build",
+      "problemMatcher": ["$tsc"],
+      "label": "Build Server",
+      "detail": "webpack --config webpack.server.config.js"
+    },
+    {
+      "label": "Build All",
+      "dependsOn": ["Build Client", "Build Server"],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    }
+  ]
+}

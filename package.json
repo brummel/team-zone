@@ -7,6 +7,7 @@
     "test": "jest",
     "build:server": "webpack --config webpack.server.config.js",
     "server": "node ./dist/server.js",
+    "start:mongo": "docker run --publish 27017:27017 mongo",
     "build:client": "webpack --config webpack.client.config.js",
     "client": "webpack-dev-server --config webpack.client.config.js --open",
     "start": "run-p server client"
